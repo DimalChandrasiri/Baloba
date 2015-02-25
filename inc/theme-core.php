@@ -79,7 +79,8 @@ function baloba_api_froms(){
 	  extract($responseData);
 
 		if($status == 'SUCCESS'){
-			wp_redirect( 'http://www.example.com' ); exit; 
+			$page_id = get_page_by_title('My Account' );
+			wp_redirect( get_permalink($page_id->ID )); exit; 
 		}
 
 	  	return $responseData;

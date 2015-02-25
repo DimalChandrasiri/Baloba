@@ -1013,6 +1013,18 @@ Account Login
 body.page-template-login-page .hero{
     position: fixed;
 }
+.myaccount{
+    background: url(../img/story-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    padding: 60px; 
+}
+.myaccount .navbar-wrapper{
+    background: #FFF;
+}
+.myaccount h1{
+    color: #FFF;
+    margin-top: 2em;
+}
 /* ==========================================================================
 Footer
 ========================================================================== */
