@@ -95,3 +95,4 @@ add_action('wp_enqueue_scripts','enqueue_baloba_scripts');
 * --------------------------------------
 */ 
 include('inc/theme-core.php');
+include('inc/session_manager/wp-session-manager.php');

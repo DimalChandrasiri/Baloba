@@ -15,7 +15,10 @@ get_header(); ?>
 			  <div class="my-login-wrapper">
 				<div class="my-login center-block">
 				   <?php the_title('<h3>','</h3>' ); ?>
-				   <?php baloba_login_error();?>
+				    <?php 
+				   		baloba_login_error();
+				   		baloba_login_handler();
+				    ?>
 					<form action="" method="POST" class="form-horizontal" role="form">
 						<div class="input-group">
 						  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>

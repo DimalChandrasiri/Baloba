@@ -96,18 +96,47 @@ function baloba_login_error(){
 
 	if(isset($responseData)){
 
-	extract($responseData);
+		extract($responseData);
 
 
-	if($code == '10005'){
-		echo '<div class="error">No such user exists</div>';
-	}
-	else if($code == '10004'){
-		echo '<div class="error">Invalid username or password</div>';
-	}
-	else{
-		echo '';
-	}
-  }
+		switch ($code) {
+			case '10005':
+				echo '<div class="error">'.$message.'</div>';
+				break;
+			
+			case '10004':
+				echo '<div class="error">'.$message.'</div>';
+				break;
+
+			case '10003':
+				echo '<div class="error">'.$message.'</div>';
+				break;
+
+			case '10002':
+				echo '<div class="error">'.$message.'</div>';
+				break;
+
+			default:
+				break;
+		}
+
+  	}
 }
 
+function baloba_login_handler(){
+
+	$responseData = baloba_api_froms();
+	var_dump($responseData);
+
+	if($responseData != null){
+		extract($responseData);
+
+		if($status == 'SUCCESS'){
+			$wp_session['user_name'] = $_POST['username'];
+			$wp_session['isAdmin'] = $admin;
+			wp_redirect( 'http://www.google.com', 301 );
+			exit;
+		}
+	}
+	
+}
